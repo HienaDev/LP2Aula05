@@ -6,9 +6,19 @@ namespace ExceptionTest
     {
         static void Main(string[] args)
         {
+            int i = 0;
             Console.WriteLine("Insere um número inteiro: ");
-            int i = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine($"Número inserido: {i}");
+
+            try
+            {
+                i = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine($"Número inserido: {i}");
+            }
+            catch(Exception e)
+            {
+                Console.Write("Ocorreu o seguinte problema: " + e.Message);    
+            }
+            Console.WriteLine("Número inserido: " + i);
         }
     }
 }
